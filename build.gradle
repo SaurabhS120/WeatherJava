@@ -17,3 +17,12 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+ext {
+    javaMainClass = "org.example.Main"
+}
+task run(type: JavaExec) {
+    group = "Execution"
+    description = "Run the main class with JavaExecTask"
+    classpath = sourceSets.main.runtimeClasspath
+    main = javaMainClass
+}
