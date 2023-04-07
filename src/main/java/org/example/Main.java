@@ -19,35 +19,35 @@ public class Main {
                 new CommandLogger(),
                 new Logable[]{
                         new ParentLogable(
-                                "Weather list",
-//                                new MultilineChildLogable(new ChildLogable[]{
-//                                        mumbaiWeather,
-//                                        puneWeather,
-//                                        bangloreWeather,
-//                                        delhiWeather,
-//                                })
-                                new ListLogger<WeatherModel, Weather>(
-                                        weatherModels,
-                                        new ListLoggerTransformer<WeatherModel, Weather>() {
-                                            @Override
-                                            public Weather transform(WeatherModel item) {
-                                                return new Weather(item.cityName, item.temp);
-                                            }
-                                        }
-                                )
+                                "Weather list from repo",
+                                new WeatherListLogger(weatherModels)
 
-                        )}
+
+                        ),
+                        new ParentLogable(
+                                "Weather list",
+                                new MultilineChildLogable(new ChildLogable[]{
+                                        mumbaiWeather,
+                                        puneWeather,
+                                        bangloreWeather,
+                                        delhiWeather,
+                                })
+
+
+                        )
+                }
         );
         weatherLogMachine.logAll();
-//        mumbaiWeather.temp = 34;
-//        puneWeather.temp = 24;
-//        bangloreWeather.temp = 51;
-//        delhiWeather.temp = 13;
-//        weatherLogMachine.logAll();
-//        mumbaiWeather.temp = 42;
-//        puneWeather.temp = 23;
-//        bangloreWeather.temp = 2;
-//        delhiWeather.temp = 14;
-//        weatherLogMachine.logAll();
+        mumbaiWeather.temp = 34;
+        puneWeather.temp = 24;
+        bangloreWeather.temp = 51;
+        delhiWeather.temp = 13;
+        weatherLogMachine.logAll();
+        mumbaiWeather.temp = 42;
+        puneWeather.temp = 23;
+        bangloreWeather.temp = 2;
+        delhiWeather.temp = 14;
+        weatherLogMachine.logAll();
     }
 }
+
