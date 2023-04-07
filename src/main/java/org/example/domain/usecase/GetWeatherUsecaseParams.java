@@ -1,7 +1,7 @@
 package org.example.domain.usecase;
 
 public class GetWeatherUsecaseParams implements BaseUsecaseParam {
-    boolean verify() {
+    public boolean verify() {
         return true;
     }
 }

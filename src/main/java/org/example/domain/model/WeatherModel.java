@@ -1,8 +1,8 @@
 package org.example.domain.model;
 
 public class WeatherModel {
-    final String cityName;
-    final int temp;
+    public final String cityName;
+    public final int temp;
 
     public WeatherModel(String cityName, int temp) {
         this.cityName = cityName;
