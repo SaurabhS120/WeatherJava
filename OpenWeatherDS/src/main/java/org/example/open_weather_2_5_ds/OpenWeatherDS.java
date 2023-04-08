@@ -21,15 +21,11 @@ public class OpenWeatherDS {
             Response<OpenWeatherResponse> apiResponse = apiCall.execute();
             if (apiResponse.isSuccessful()) {
                 OpenWeatherResponse openWeatherResponse = apiResponse.body();
-                System.out.println("success");
                 return openWeatherResponse;
             }
-            System.out.println("try");
         } catch (IOException e) {
-            System.out.println("catch");
             throw new RuntimeException(e);
         }
-        System.out.println("return");
         return null;
     }
 }
