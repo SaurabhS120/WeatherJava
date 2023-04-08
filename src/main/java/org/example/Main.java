@@ -7,7 +7,7 @@ import org.example.logger.*;
 import org.example.logger.command_logger.CommandLogger;
 
 public class Main {
-    static DI di = new DI(RepoModes.DUMMY_REPO);
+    static DI di = new DI(RepoModes.OPEN_WEATHER_REPO);
     public static void main(String[] args) {
         Weather mumbaiWeather = new Weather("Mumbai", 30);
         Weather puneWeather = new Weather("Pune", 40);
