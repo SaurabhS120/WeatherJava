@@ -23,17 +23,15 @@ jobs:
     steps:
     - name: Checkout project sources
       uses: actions/checkout@v2
-    - name: Print test API key
-      env:
-        TEST_API_KEY: ${{ secrets.TEST_API_KEY }}
-      run: echo $TEST_API_KEY
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
     - name: set gradlew permission
       run : chmod +x gradlew
     - name: Run build with Gradle Wrapper
+      env:
+        OPEN_WEATHER_API_KEY: ${{ secrets.OPEN_WEATHER_API_KEY }}
       run: ./gradlew build
-    - name: Run test cases
-      run: ./gradlew test
     - name: Run main
+      env:
+        OPEN_WEATHER_API_KEY: ${{ secrets.OPEN_WEATHER_API_KEY }}
       run: ./gradlew run
