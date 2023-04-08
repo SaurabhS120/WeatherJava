@@ -19,6 +19,7 @@ permissions:
 jobs:
   build-gradle-project:
     runs-on: ubuntu-latest
+    environment: weather test
     steps:
     - name: Checkout project sources
       uses: actions/checkout@v2
