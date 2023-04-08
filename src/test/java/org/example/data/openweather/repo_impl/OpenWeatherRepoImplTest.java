@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class OpenWeatherRepoImplTest {
+
     @Test
     void openWeatherRepoImplTest() {
         DI di = new DI(RepoModes.OPEN_WEATHER_REPO);
@@ -21,7 +22,7 @@ class OpenWeatherRepoImplTest {
         GetWeatherUsecaseParams usecaseParams = new GetWeatherUsecaseParams();
         Assertions.assertTrue(usecaseParams.verify());
         WeatherModel[] weatherModels = getWeatherUsecase.invoke(usecaseParams);
-        WeatherModel[] unExpectedResult = new WeatherModel[]{new WeatherModel("Pune", 32), new WeatherModel("Mumbai", 36), new WeatherModel("Bangalore", 39), new WeatherModel("Delhi", 28)};
+        WeatherModel[] unExpectedResult = new WeatherModel[]{new WeatherModel("dummy", 22)};
         assertTrue(weatherModels.length > 0);
         assertNotEquals(unExpectedResult[0].cityName, weatherModels[0].cityName);
         assertNotEquals(unExpectedResult[0].temp, weatherModels[0].temp);

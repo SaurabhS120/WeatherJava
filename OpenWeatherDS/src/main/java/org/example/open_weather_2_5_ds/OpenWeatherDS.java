@@ -9,7 +9,8 @@ import java.io.IOException;
 public class OpenWeatherDS {
 
     //This open weather API key will be fetched from environment variable OPEN_WEATHER_API_KEY
-    private static String API_KEY = System.getenv("OPEN_WEATHER_API_KEY");
+//    private static String API_KEY = System.getenv("OPEN_WEATHER_API_KEY");
+    private static String API_KEY = "";
 
     final OpenWeatherApiInterface openWeatherApiClient = OpenWeatherRetrofitApiProvider.getRetrofitApi();
 
@@ -22,11 +23,15 @@ public class OpenWeatherDS {
             Response<OpenWeatherResponse> apiResponse = apiCall.execute();
             if (apiResponse.isSuccessful()) {
                 OpenWeatherResponse openWeatherResponse = apiResponse.body();
+                System.out.println("success");
                 return openWeatherResponse;
             }
+            System.out.println("try");
         } catch (IOException e) {
+            System.out.println("catch");
             throw new RuntimeException(e);
         }
+        System.out.println("return");
         return null;
     }
 }
