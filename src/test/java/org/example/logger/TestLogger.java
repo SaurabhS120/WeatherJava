@@ -28,7 +28,7 @@ public class TestLogger implements Logger {
     }
 
     void logCurrentResult() {
-        System.out.print("{");
+        System.out.print("new String[]{");
         for (String log : logs) {
             if (log == DefaultLogConfigs.parentLogSeparator) {
                 System.out.print("DefaultLogConfigs.parentLogSeparator,");

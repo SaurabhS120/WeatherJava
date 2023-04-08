@@ -28,14 +28,12 @@ public class Weather implements ChildLogable {
         if (obj instanceof Weather) {
             Weather weather = (Weather) obj;
             return weather.city == this.city && weather.temp == this.temp;
-        } else {
-            return super.equals(obj);
         }
+        return super.equals(obj);
     }
 
     @Override
     public String toString() {
-
         return "Weather(cityName : " + city + ",temp : " + temp + ")";
     }
 }

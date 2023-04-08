@@ -12,7 +12,7 @@ public class ListLogger<ITEM_TYPE, CHILD_LOGGABLE_TYPE extends ChildLogable> imp
         this.transformer = transformer;
     }
 
-    List<CHILD_LOGGABLE_TYPE> getChildLoggables() {
+    public List<CHILD_LOGGABLE_TYPE> getChildLoggables() {
         List<CHILD_LOGGABLE_TYPE> childs = new ArrayList<CHILD_LOGGABLE_TYPE>();
         for (ITEM_TYPE item : list) {
             childs.add(transformer.transform(item));
