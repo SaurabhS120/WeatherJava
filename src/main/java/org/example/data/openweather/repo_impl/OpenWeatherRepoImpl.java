@@ -12,7 +12,6 @@ public class OpenWeatherRepoImpl implements WeatherRepo {
     public WeatherModel[] getWeather() {
         OpenWeatherResponse response = openWeatherDS.getWeather();
         if (response != null) {
-            System.out.println("response != null");
             String cityName = response.getCityName();
             double temp = response.getTemp();
             return new WeatherModel[]{new WeatherModel(cityName, (int) temp)};
