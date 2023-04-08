@@ -17,7 +17,7 @@ class ListLoggerTest {
         ListLogger<WeatherModel, Weather> listLogger = new ListLogger<WeatherModel, Weather>(weatherModels, (ListLoggerTransformer<WeatherModel, Weather>) item -> new Weather(item.cityName, item.temp));
         assertArrayEquals(new Weather[]{
                 new Weather("pune", 20),
-                new Weather("mumbai", 30),
+                new Weather("mumi", 30),
                 new Weather("hydrabad", 18),
         }, listLogger.getChildLoggables().toArray());
         TestLogger testLogger = new TestLogger();
