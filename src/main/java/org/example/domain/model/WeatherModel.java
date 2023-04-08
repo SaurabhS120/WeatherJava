@@ -8,4 +8,9 @@ public class WeatherModel {
         this.cityName = cityName;
         this.temp = temp;
     }
+
+    @Override
+    public String toString() {
+        return "WeatherModel(cityName : " + cityName + ",temp : " + temp + ")";
+    }
 }

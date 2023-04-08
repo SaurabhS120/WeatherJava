@@ -1,5 +1,8 @@
 package org.example.logger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ListLogger<ITEM_TYPE, CHILD_LOGGABLE_TYPE extends ChildLogable> implements ChildLogable {
     ITEM_TYPE[] list;
     ListLoggerTransformer<ITEM_TYPE, CHILD_LOGGABLE_TYPE> transformer;
@@ -9,11 +12,17 @@ public class ListLogger<ITEM_TYPE, CHILD_LOGGABLE_TYPE extends ChildLogable> imp
         this.transformer = transformer;
     }
 
+    List<CHILD_LOGGABLE_TYPE> getChildLoggables() {
+        List<CHILD_LOGGABLE_TYPE> childs = new ArrayList<CHILD_LOGGABLE_TYPE>();
+        for (ITEM_TYPE item : list) {
+            childs.add(transformer.transform(item));
+        }
+        return childs;
+    }
+
     @Override
     public void onLog(Logger logger) {
-        CHILD_LOGGABLE_TYPE child;
-        for (ITEM_TYPE item : list) {
-            child = transformer.transform(item);
+        for (CHILD_LOGGABLE_TYPE child : getChildLoggables()) {
             child.onLog(logger);
         }
     }
