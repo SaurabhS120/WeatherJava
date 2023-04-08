@@ -14,7 +14,6 @@ public class OpenWeatherDS {
     final OpenWeatherApiInterface openWeatherApiClient = OpenWeatherRetrofitApiProvider.getRetrofitApi();
 
     public OpenWeatherResponse getWeather() {
-        System.out.println("Open weather API key : " + API_KEY);
         double lat = 44.34;
         double lon = 10.99;
         Call<OpenWeatherResponse> apiCall = openWeatherApiClient.getCurrentWeather(lat, lon, API_KEY);
