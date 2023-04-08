@@ -9,8 +9,7 @@ import java.io.IOException;
 public class OpenWeatherDS {
 
     //This open weather API key will be fetched from environment variable OPEN_WEATHER_API_KEY
-//    private static String API_KEY = System.getenv("OPEN_WEATHER_API_KEY");
-    private static String API_KEY = "";
+    private static String API_KEY = System.getenv("OPEN_WEATHER_API_KEY");
 
     final OpenWeatherApiInterface openWeatherApiClient = OpenWeatherRetrofitApiProvider.getRetrofitApi();
 
