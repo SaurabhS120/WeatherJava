@@ -12,10 +12,10 @@ public class ParentLogable implements Logable {
     @Override
     public void onLog(Logger logger) {
         logger.logLine("");
-        logger.logLine("-------------------------------------------------");
+        logger.logLine(DefaultLogConfigs.parentLogSeparator);
         logger.logLine(heading);
-        logger.logLine("-------------------------------------------------");
+        logger.logLine(DefaultLogConfigs.parentLogSeparator);
         logger.log(child);
-        logger.logLine("-------------------------------------------------");
+        logger.logLine(DefaultLogConfigs.parentLogSeparator);
     }
 }
