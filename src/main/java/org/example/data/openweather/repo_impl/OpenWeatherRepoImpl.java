@@ -17,7 +17,6 @@ public class OpenWeatherRepoImpl implements WeatherRepo {
             double temp = response.getTemp();
             return new WeatherModel[]{new WeatherModel(cityName, (int) temp)};
         }
-        System.out.println("response == null");
         return new WeatherModel[]{new WeatherModel("dummy", 22)};
     }
 }

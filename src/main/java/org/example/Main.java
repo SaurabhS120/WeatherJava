@@ -9,16 +9,17 @@ import org.example.logger.ParentLogable;
 import org.example.logger.command_logger.CommandLogger;
 
 public class Main {
-    static DI di = new DI(RepoModes.DUMMY_REPO);
+    static RepoModes repoMode = RepoModes.DUMMY_REPO;
 
     static void weatherPrint() {
+        DI di = new DI(repoMode);
         GetWeatherUsecase getWeatherUsecase = di.getWeatherUsecase();
         WeatherModel[] weatherModels = getWeatherUsecase.invoke(new GetWeatherUsecaseParams());
         LogMachine weatherLogMachine = new LogMachine(
                 new CommandLogger(),
                 new Logable[]{
                         new ParentLogable(
-                                "Weather list from repo",
+                                "Weather list from repo : " + repoMode.name(),
                                 new WeatherListLogger(weatherModels)
 
 
@@ -30,7 +31,7 @@ public class Main {
 
     public static void main(String[] args) {
         weatherPrint();
-        di = new DI(RepoModes.OPEN_WEATHER_REPO);
+        repoMode = RepoModes.OPEN_WEATHER_REPO;
         weatherPrint();
     }
 }
