@@ -28,5 +28,7 @@ jobs:
       run : chmod +x gradlew
     - name: Run build with Gradle Wrapper
       run: ./gradlew build
+    - name: Run test cases
+      run: ./gradlew test
     - name: Run main
       run: ./gradlew run
