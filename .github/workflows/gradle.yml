@@ -26,7 +26,7 @@ jobs:
       uses: gradle/gradle-build-action@v2
       with:
         distribution: temurin
-        java-version: 18
+        java-version: 8
     - name: set gradlew permission
       run : chmod +x gradlew
     - name: Run build with Gradle Wrapper
