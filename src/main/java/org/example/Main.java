@@ -31,7 +31,7 @@ public class Main {
 
     public static void main(String[] args) {
         weatherPrint();
-        repoMode = RepoModes.OPEN_WEATHER_REPO;
+        repoMode = RepoModes.WEATHER_API_REPO;
         weatherPrint();
     }
 }

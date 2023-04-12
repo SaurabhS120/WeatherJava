@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.data.dummy.repo_impl.DummyWeatherRepoImpl;
 import org.example.data.openweather.repo_impl.OpenWeatherRepoImpl;
+import org.example.data.weather_api_impl.WeatherApiRepoImpl;
 import org.example.domain.repo.WeatherRepo;
 import org.example.domain.usecase.GetWeatherUsecase;
 
@@ -21,6 +22,9 @@ public class DI implements BaseDI {
                 break;
             case OPEN_WEATHER_REPO:
                 diObj = new OpenWeatherDI();
+                break;
+            case WEATHER_API_REPO:
+                diObj = new WeatherApiDI();
                 break;
         }
     }
@@ -55,6 +59,19 @@ class OpenWeatherDI implements BaseDI {
     @Override
     public WeatherRepo getWeatherRepo() {
         return new OpenWeatherRepoImpl();
+    }
+
+    @Override
+    public GetWeatherUsecase getWeatherUsecase() {
+        return new GetWeatherUsecase(getWeatherRepo());
+    }
+}
+
+class WeatherApiDI implements BaseDI {
+
+    @Override
+    public WeatherRepo getWeatherRepo() {
+        return new WeatherApiRepoImpl();
     }
 
     @Override
