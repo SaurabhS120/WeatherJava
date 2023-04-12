@@ -30,8 +30,10 @@ jobs:
     - name: Run build with Gradle Wrapper
       env:
         OPEN_WEATHER_API_KEY: ${{ secrets.OPEN_WEATHER_API_KEY }}
+        WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
       run: ./gradlew build
     - name: Run main
       env:
         OPEN_WEATHER_API_KEY: ${{ secrets.OPEN_WEATHER_API_KEY }}
+        WEATHER_API_KEY: ${{ secrets.WEATHER_API_KEY }}
       run: ./gradlew run
