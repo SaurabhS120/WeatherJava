@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/OpenWeatherDS" />
+            <option value="$PROJECT_DIR$/WeatherApiDS" />
           </set>
         </option>
       </GradleProjectSettings>

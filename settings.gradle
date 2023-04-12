@@ -1,3 +1,4 @@
 rootProject.name = 'WeatherJava'
 include 'OpenWeatherDS'
+include 'WeatherApiDS'
 
