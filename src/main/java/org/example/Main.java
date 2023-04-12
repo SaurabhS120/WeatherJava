@@ -33,6 +33,8 @@ public class Main {
         weatherPrint();
         repoMode = RepoModes.OPEN_WEATHER_REPO;
         weatherPrint();
+        repoMode = RepoModes.WEATHER_API_REPO;
+        weatherPrint();
     }
 }
 
